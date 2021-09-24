@@ -23,7 +23,25 @@ let addWord = function(req, res) {
     // return a response of 500 if the query fails
 }
 
-module.exports = {addWord};
+let getWords = function(req, res){
+    console.log("GET getWords()");
+
+    let sql = 'select word from words;';
+
+    debug.query(sql, function(err, rows){
+        if(err){
+            res.sendStatus(500);
+        } else {
+            // why return this instead of rows???
+            let wordArray = rows.map(function(row){
+                return row.word;
+            });
+            res.json(wordArray);
+        }
+    })
+}
+
+module.exports = {addWord, getWords};
 
 
 // for get

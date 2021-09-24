@@ -7,8 +7,11 @@ let app = express();
 // enable app to be able to parse json bodies in post/put
 app.use(express.json());
 
-let exampleRoute = require("./example/route");
-app.use(exampleRoute);
+// let exampleRoute = require("./example/route");
+// app.use(exampleRoute);
+
+let userRoute = require('./router/users');-
+app.use(userRoute);
 
 let port = process.env.PORT || 4000;
 
