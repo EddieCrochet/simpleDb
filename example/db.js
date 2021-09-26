@@ -11,7 +11,7 @@
 
 // connection.connect();
 
-// connection.query("use "+process.env.MYSQL_DATABASE, function(err, row){
+// connection.query("use "+process.env.MYSQL_DATABASE, function(err, rows){
 //     if(err){
 //         console.log("DB query error ", err);
 //     } else {

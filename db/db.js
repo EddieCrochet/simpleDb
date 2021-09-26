@@ -11,7 +11,7 @@ let connection = {
 
 const pool = new Pool(connection);
 
-pool.query("use "+process.env.PG_DATABASE, function(err, row){
+pool.query("select now()", function(err, rows){
     if(err){
         console.log("DB query error ", err);
     } else {
