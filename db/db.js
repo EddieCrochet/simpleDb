@@ -20,4 +20,4 @@ pool.query("use "+process.env.PG_DATABASE, function(err, row){
     
 });
 
-module.exports = connection;
+module.exports = pool;

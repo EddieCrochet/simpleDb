@@ -28,13 +28,13 @@ let getWords = function(req, res){
 
     let sql = 'select word from words;';
 
-    debug.query(sql, function(err, rows){
+    connection.query(sql, function(err, rows){
         if(err){
             res.sendStatus(500);
         } else {
             // why return this instead of rows???
-            let wordArray = rows.map(function(row){
-                return row.word;
+            let wordArray = rows.map(function(rows){
+                return rows.word;
             });
             res.json(wordArray);
         }

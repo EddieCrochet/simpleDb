@@ -1,4 +1,4 @@
-let db = require('../db/db');
+let connection = require('../db/db');
 
 let createUser = function(req, res){
     console.log("post users - createuser");
@@ -15,10 +15,12 @@ let createUser = function(req, res){
         username, fullname, email, password
     ];
 
-    db.query(sql, params, function(err ,rows){
+    connection.query(sql, params, function(err ,rows){
         if(err){
+            console.log("Something's wrong...", err);
             res.sendStatus(500);
         } else {
+            console.log("bingo... ", rows);
             res.sendStatus(204);
         }
     })
