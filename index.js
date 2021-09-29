@@ -10,7 +10,7 @@ app.use(express.json());
 // let exampleRoute = require("./example/route");
 // app.use(exampleRoute);
 
-let userRoute = require('./router/users');-
+let userRoute = require('./router/words');-
 app.use(userRoute);
 
 let port = process.env.PORT || 4000;

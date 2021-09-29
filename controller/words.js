@@ -1,6 +1,7 @@
-const connection = require("./db");
+const connection = require("../db/db");
 
 let addWord = function(req, res) {
+    console.log("in the addWord function");
     let word = req.body.word;
 
 
@@ -26,10 +27,11 @@ let addWord = function(req, res) {
 let getWords = function(req, res){
     console.log("GET getWords()");
 
-    let sql = 'select word from words;';
+    let sql = 'select * from appUsers;';
 
     connection.query(sql, function(err, rows){
         if(err){
+            console.log("WHoopsie doodle...", err);
             res.sendStatus(500);
         } else {
             // why return this instead of rows???
