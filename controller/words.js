@@ -27,7 +27,7 @@ let addWord = function(req, res) {
 let getWords = function(req, res){
     console.log("GET getWords()");
 
-    let sql = 'select * from appUsers;';
+    let sql = 'select * from users;';
 
     connection.query(sql, function(err, rows){
         if(err){
